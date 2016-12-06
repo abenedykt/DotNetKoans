@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using Xunit;
 using System.Reflection;
@@ -12,7 +13,11 @@ namespace DotNetKoans.KoanRunner
 
 		static int Main(string[] args)
 		{
-			StringBuilder progress = new StringBuilder();
+            CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo("en-US");
+            CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.GetCultureInfo("en-US");
+
+
+            StringBuilder progress = new StringBuilder();
 			try
 			{
 				Console.WriteLine("");
